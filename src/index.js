@@ -1,36 +1,31 @@
 import Phaser from 'phaser';
-
-class MyGame extends Phaser.Scene
-{
-    constructor ()
-    {
-        super();
-    }
-
-    preload ()
-    {
-        this.load.spritesheet('Mr.Meowgi', 'assets/cat_fighter_sprite2.png', 64,64 )
-    }
-
-    create ()
-    {
-        mysprite = this.game.add.sprite(15, 30, 'Mr.Meowgi');
-        mysprite.frame = 3;
-
-        mysprite.animations.add('left', [0, 1, 2, 3], 10, true);
-mysprite.animations.add('right', [5, 6, 7, 8], 10, true);
-
-mysprite.animations.play('left');
-mysprite.animations.stop();
-    }
-}
-
+import MainScene from './MainScene.js';
+import { PhaserMatterCollisionPlugin } from "phaser-matter-collision-plugin";
 const config = {
-    type: Phaser.AUTO,
-    parent: 'phaser-example',
     width: 800,
     height: 600,
-    scene: MyGame
+    backgroundColor: '#777777',
+    type: Phaser.AUTO,
+    parent: 'phaser-example',
+    scene: [MainScene],
+    scale:{
+        zoom:2,
+    },
+    physics:{
+        default: 'matter',
+        matter:{
+            debug: true,
+            gravity: {y:0},
+        }
+    },
+    plugins: {
+        scene: [
+          {
+            plugin: PhaserMatterCollisionPlugin, // The plugin class
+            key: "matterCollision", // Where to store in Scene.Systems, e.g. scene.sys.matterCollision
+            mapping: "matterCollision" // Where to store in the Scene, e.g. scene.matterCollision
+          }
+        ]
+      }
 };
-
-const game = new Phaser.Game(config);
+new Phaser.Game(config);
