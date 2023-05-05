@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+// import Player from "./Player.js"; ** this is for when the sprites are ready
 
 export default class MainScene extends Phaser.Scene{
   constructor(){
@@ -7,11 +8,19 @@ export default class MainScene extends Phaser.Scene{
   preload ()
   {
       console.log('preload')
+      // Player.load(this) ** this is for when the sprites are ready
+      // this.load.image('tiles', 'src/assets/images/???')
+      // this.load.tilemapTiledJSON('map1', 'src/assets/images/map1.json')
   }
 
   create ()
   {
+    // const map1= this.make.tilemap({key: 'map'})
+    // const tileset = map1.addTilesetImage('name', 'tiles', 32,32,0,0)
+    // const layer1 = map1.createStaticLayer('Tile layer 1', tileset)
+    // layer1.setCollisionByProperty({collides:true})
       console.log('create')
+      // this.player = new Player({scene: this, x:0 ,y:0 , texture:'hero',frame:'idle'}) ** this is for when the sprites are ready
       this.player = new Phaser.Physics.Matter.Sprite(this.matter.world)
       this.inputKeys = this.input.keyboard.addKeys({
         up: Phaser.Input.Keyboard.KeyCodes.W,
@@ -22,7 +31,7 @@ export default class MainScene extends Phaser.Scene{
   }
   update ()
   {
-      console.log('update')
+      // this.player.update() ** this is for when the sprites are ready
       const speed = 2.5;
       let playerVelocity = new Phaser.Math.Vector2();
       if(this.inputKeys.left.isDown){
@@ -38,5 +47,6 @@ export default class MainScene extends Phaser.Scene{
       playerVelocity.normalize()
       playerVelocity.scale(speed)
       this.player.setVelocity(playerVelocity.x, playerVelocity.y)
+
   }
 }
