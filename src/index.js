@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import logoImg from './assets/logo.png';
 
 class MyGame extends Phaser.Scene
 {
@@ -10,21 +9,19 @@ class MyGame extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('logo', logoImg);
+        this.load.spritesheet('Mr.Meowgi', 'assets/cat_fighter_sprite2.png', 64,64 )
     }
-      
+
     create ()
     {
-        const logo = this.add.image(400, 150, 'logo');
-      
-        this.tweens.add({
-            targets: logo,
-            y: 450,
-            duration: 2000,
-            ease: "Power2",
-            yoyo: true,
-            loop: -1
-        });
+        mysprite = this.game.add.sprite(15, 30, 'Mr.Meowgi');
+        mysprite.frame = 3;
+
+        mysprite.animations.add('left', [0, 1, 2, 3], 10, true);
+mysprite.animations.add('right', [5, 6, 7, 8], 10, true);
+
+mysprite.animations.play('left');
+mysprite.animations.stop();
     }
 }
 
