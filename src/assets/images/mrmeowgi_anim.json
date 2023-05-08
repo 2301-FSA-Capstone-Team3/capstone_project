@@ -1,0 +1,204 @@
+{
+    "anims": [
+        {
+            "key": "uppercut",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 10,
+            "frames": [
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile000"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile001"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile003"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile055"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile059"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile039"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile038"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile037"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile036"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile026"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile025"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile024"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile051"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile050"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile041"
+                }
+            ]
+        },
+        {
+            "key": "jab",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile000"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile001"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile003"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile020"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile019"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile018"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile014"
+                }
+            ]
+        },
+        {
+            "key": "highkick",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile000"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile047"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile042"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile043"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile044"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile045"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile046"
+                }
+            ]
+        },
+        {
+            "key": "idle",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 3,
+            "frames": [
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile000"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile001"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile002"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile003"
+                }
+            ]
+        },
+        {
+            "key": "walk",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 8,
+            "frames": [
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile000"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile001"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile003"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile004"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile005"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile006"
+                },
+                {
+                    "key": "mrmeowgi",
+                    "frame": "tile007"
+                }
+            ]
+        }
+    ]
+}
