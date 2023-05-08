@@ -18,8 +18,9 @@ export default class Player extends Phaser.Physics.Matter.Sprite{
   }
   update ()
   {
-      //  ** this is for when the sprites are ready
-      // this.anims.play('idle', true) ** breaks with error cant find properties of duration
+    
+      // this.anims.play('idle', true)
+      //** breaks with error cant find properties of duration
       const speed = 2.5;
       let playerVelocity = new Phaser.Math.Vector2();
       if(this.inputKeys.left.isDown){
