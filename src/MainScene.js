@@ -9,7 +9,8 @@ export default class MainScene extends Phaser.Scene{
   }
   preload ()
   {
-    this.load.atlas("cat", "assets/images/cat.png", 'assets/images/cat_atlas');
+    this.load.atlas("cat", "assets/images/cat.png", 'assets/images/cat_atlas.json');
+    this.load.animation("cat", "assets/images/cat");
       console.log('preload')
       
       // this.load.image('tiles', 'src/assets/images/???')
@@ -18,14 +19,14 @@ export default class MainScene extends Phaser.Scene{
 
   create ()
   {
-    var mySprites = this.add.sprite(300,200,"cat")
+    let mySprites = this.add.sprite(300,200,"cat")
     // const map1= this.make.tilemap({key: 'map'})
     // const tileset = map1.addTilesetImage('name', 'tiles', 32,32,0,0)
     // const layer1 = map1.createStaticLayer('Tile layer 1', tileset)
     // layer1.setCollisionByProperty({collides:true})
       console.log('create')
-      // this.player = new Player({scene: this, x:0 ,y:0 , texture:'hero',frame:'idle'}) ** this is for when the sprites are ready
-      this.player = new Phaser.Physics.Matter.Sprite(this.matter.world,0,0,'cat', 'cat')
+      // this.player = new Player({scene: this, x:0 ,y:0 , texture:'hero',frame:'idle'}) 
+      this.player = new Phaser.Physics.Matter.Sprite(this.matter.world,0,0,'cat', 'cat_idel')
       this.inputKeys = this.input.keyboard.addKeys({
         up: Phaser.Input.Keyboard.KeyCodes.W,
         down: Phaser.Input.Keyboard.KeyCodes.S,
