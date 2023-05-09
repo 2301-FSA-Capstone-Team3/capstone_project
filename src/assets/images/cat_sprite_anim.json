@@ -1,0 +1,712 @@
+{
+    "anims": [
+        {
+            "key": "cat_uppercat2",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 15,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile240"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile241"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile242"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile243"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile244"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile245"
+                }
+            ]
+        },
+        {
+            "key": "cat_roundhouse",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 15,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile224"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile225"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile226"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile227"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile228"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile229"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile230"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile231"
+                }
+            ]
+        },
+        {
+            "key": "cat_twosideattack",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 13,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile210"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile211"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile212"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile213"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile214"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile215"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile224"
+                }
+            ]
+        },
+        {
+            "key": "cat_downwardskick",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 15,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile192"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile193"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile194"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile195"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile196"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile197"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile198"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile199"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile210"
+                }
+            ]
+        },
+        {
+            "key": "cat_highkick",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile176"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile177"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile178"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile179"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile180"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile181"
+                }
+            ]
+        },
+        {
+            "key": "cat_middlekick",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile165"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile166"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile167"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile168"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile169"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile170"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile171"
+                }
+            ]
+        },
+        {
+            "key": "cat_lowkick",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile160"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile161"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile162"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile163"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile164"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile165"
+                }
+            ]
+        },
+        {
+            "key": "cat_onetwo",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile144"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile145"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile146"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile147"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile148"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile149"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile150"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile151"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile152"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile153"
+                }
+            ]
+        },
+        {
+            "key": "cat_uppercat",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 15,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile128"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile129"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile130"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile131"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile132"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile133"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile134"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile135"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile136"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile137"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile138"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile139"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile140"
+                }
+            ]
+        },
+        {
+            "key": "cat_flyingkick",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile112"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile113"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile114"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile115"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile116"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile117"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile118"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile119"
+                }
+            ]
+        },
+        {
+            "key": "cat_fastshot",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile096"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile097"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile098"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile099"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile100"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile101"
+                }
+            ]
+        },
+        {
+            "key": "cat_powershot",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile080"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile081"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile082"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile083"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile084"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile085"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile086"
+                }
+            ]
+        },
+        {
+            "key": "cat_k.o",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 10,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile064"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile065"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile066"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile067"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile068"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile069"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile070"
+                }
+            ]
+        },
+        {
+            "key": "cat_knockback",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 13,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile064"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile065"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile066"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile067"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile068"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile069"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile070"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile071"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile072"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile082"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile081"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile080"
+                }
+            ]
+        },
+        {
+            "key": "cat_spin",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile032"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile050"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile051"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile052"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile053"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile054"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile055"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile056"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile057"
+                }
+            ]
+        },
+        {
+            "key": "cat_jump",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile000"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile036"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile034"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile034"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile036"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile037"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile038"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile039"
+                }
+            ]
+        },
+        {
+            "key": "cat_walk",
+            "type": "frames",
+            "repeat": 0,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile016"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile017"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile018"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile019"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile020"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile021"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile022"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile023"
+                }
+            ]
+        },
+        {
+            "key": "cat_idle",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 10,
+            "frames": [
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile000"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile001"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile002"
+                },
+                {
+                    "key": "cat_sprite",
+                    "frame": "tile003"
+                }
+            ]
+        }
+    ]
+}
