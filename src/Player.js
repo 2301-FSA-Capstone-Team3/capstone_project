@@ -10,7 +10,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite{
  static preload (scene)
   {
     scene.load.atlas("hero", mrmPng, mrmAtlasjson);
-    scene.load.animation("hero_anims", mrmAnims);
+    scene.load.animation("hero", mrmAnims);
   }
   create ()
   {
@@ -18,7 +18,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite{
   }
   update ()
   {
-    
+
       // this.anims.play('idle', true)
       //** breaks with error cant find properties of duration
       const speed = 2.5;
