@@ -22,9 +22,6 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     return this.body.velocity;
   }
   update() {
-    console.log("update");
-    //     // this.player.update() ** this is for when the sprites are ready
-    // this.anims.play("down_walk", true);
     const speed = 1;
     let playerVelocity = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {
@@ -40,7 +37,18 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     playerVelocity.normalize();
     playerVelocity.scale(speed);
     this.setVelocity(playerVelocity.x, playerVelocity.y);
+
+    if (playerVelocity.x < 0) {
+      this.setFlipX(true);
+    } else if (playerVelocity.x > 0) {
+      this.setFlipX(false);
+    }
+
     if (this.inputKeys.up.isDown && this.inputKeys.right.isDown) {
+      this.anims.play("side_walk", true);
+    } else if (this.inputKeys.left.isDown && this.inputKeys.up.isDown) {
+      this.anims.play("side_walk", true);
+    } else if (this.inputKeys.left.isDown && this.inputKeys.down.isDown) {
       this.anims.play("side_walk", true);
     } else if (this.inputKeys.up.isDown) {
       this.anims.play("up_walk", true);
@@ -50,6 +58,20 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
       this.anims.play("down_walk", true);
     } else if (this.inputKeys.left.isDown || this.inputKeys.right.isDown) {
       this.anims.play("side_walk", true);
+      // } else if (this.inputKeys.attack.isDown && !this.isAttacking) {
+      //   this.isAttacking = true;
+      //   this.anims.play("side_attack");
+      //   let currentAnim = this.anims.currentAnim;
+      //   if (currentAnim) {
+      //     currentAnim.once(
+      //       "complete",
+      //       function (animation, frame) {
+      //         this.isAttacking = false;
+      //         this.anims.play("down_idle", true);
+      //       },
+      //       this
+      //     );
+      //   }
     } else {
       this.anims.play("down_idle", true);
     }
