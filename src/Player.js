@@ -1,31 +1,33 @@
-import mrmPng from './assets/images/cat_sprite.png'
-const mrmAtlasjson = require('./assets/images/cat_sprite_atlas.json')
-const mrmAnims = require('./assets/images/cat_sprite_anim.json')
-export default class Player extends Phaser.Physics.Matter.Sprite{
-  constructor(data){
-    let {scene,x,y,texture,frame} = data
-    super(scene.matter.world,x,y,texture,frame);
-    this.scene.add.existing(this)
-    const {Body, Bodies} = Phaser.Physics.Matter.Matter
-    let playerCollider = Bodies.circle(this.x,this.y,13, {isSensor:false, label:'playerCollider'})
-    let playerSensor = Bodies.circle(this.x,this.y,25, {isSensor:true, label:'playerSensor'})
+import mrmPng from "./assets/images/cat_sprite.png";
+const mrmAtlasjson = require("./assets/images/cat_sprite_atlas.json");
+const mrmAnims = require("./assets/images/cat_sprite_anim.json");
+export default class Player extends Phaser.Physics.Matter.Sprite {
+  constructor(data) {
+    let { scene, x, y, texture, frame } = data;
+    super(scene.matter.world, x, y, texture, frame);
+    this.scene.add.existing(this);
+    const { Body, Bodies } = Phaser.Physics.Matter.Matter;
+    let playerCollider = Bodies.circle(this.x, this.y, 13, {
+      isSensor: false,
+      label: "playerCollider",
+    });
+    let playerSensor = Bodies.circle(this.x, this.y, 25, {
+      isSensor: true,
+      label: "playerSensor",
+    });
     const compoundBody = Body.create({
       parts: [playerCollider, playerSensor],
       frictionAir: 0.35,
-    })
-    this.setExistingBody(compoundBody)
-    this.setFixedRotation()
+    });
+    this.setExistingBody(compoundBody);
+    this.setFixedRotation();
   }
- static preload (scene)
-  {
+  static preload(scene) {
     scene.load.atlas("cat_sprite", mrmPng, mrmAtlasjson);
     scene.load.animation("cat_sprite_anims", mrmAnims);
   }
-  create ()
-  {
-  }
-  update ()
-  {
+  create() {}
+  update() {
     const speed = 1.5;
     let playerVelocity = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {
@@ -40,6 +42,13 @@ export default class Player extends Phaser.Physics.Matter.Sprite{
     }
     playerVelocity.normalize();
     playerVelocity.scale(speed);
+
+    if (playerVelocity.x < 0) {
+      this.setFlipX(true);
+    } else if (playerVelocity.x > 0) {
+      this.setFlipX(false);
+    }
+
     this.setVelocity(playerVelocity.x, playerVelocity.y);
     if (this.inputKeys.up.isDown && this.inputKeys.right.isDown) {
       this.anims.play("cat_walk", true);
