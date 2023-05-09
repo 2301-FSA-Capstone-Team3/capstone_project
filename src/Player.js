@@ -6,6 +6,15 @@ export default class Player extends Phaser.Physics.Matter.Sprite{
     let {scene,x,y,texture,frame} = data
     super(scene.matter.world,x,y,texture,frame);
     this.scene.add.existing(this)
+    const {Body, Bodies} = Phaser.Physics.Matter.Matter
+    let playerCollider = Bodies.circle(this.x,this.y,13, {isSensor:false, label:'playerCollider'})
+    let playerSensor = Bodies.circle(this.x,this.y,25, {isSensor:true, label:'playerSensor'})
+    const compoundBody = Body.create({
+      parts: [playerCollider, playerSensor],
+      frictionAir: 0.35,
+    })
+    this.setExistingBody(compoundBody)
+    this.setFixedRotation()
   }
  static preload (scene)
   {
@@ -17,7 +26,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite{
   }
   update ()
   {
-    const speed = 1;
+    const speed = 1.5;
     let playerVelocity = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {
       playerVelocity.x = -1;
