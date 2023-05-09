@@ -1,6 +1,6 @@
-import mrmPng from './assets/images/mrmeowgi.png'
-const mrmAtlasjson = require('./assets/images/mrmeowgi_atlas.json')
-const mrmAnims = require('./assets/images/mrmeowgi_anim.json')
+import mrmPng from './assets/images/cat_sprite.png'
+const mrmAtlasjson = require('./assets/images/cat_sprite_atlas.json')
+const mrmAnims = require('./assets/images/cat_sprite_anim.json')
 export default class Player extends Phaser.Physics.Matter.Sprite{
   constructor(data){
     let {scene,x,y,texture,frame} = data
@@ -9,8 +9,8 @@ export default class Player extends Phaser.Physics.Matter.Sprite{
   }
  static preload (scene)
   {
-    scene.load.atlas("hero", mrmPng, mrmAtlasjson);
-    scene.load.animation("hero_anims", mrmAnims);
+    scene.load.atlas("cat_sprite", mrmPng, mrmAtlasjson);
+    scene.load.animation("cat_sprite_anims", mrmAnims);
   }
   create ()
   {
@@ -19,23 +19,33 @@ export default class Player extends Phaser.Physics.Matter.Sprite{
   update ()
   {
     
-      // this.anims.play('idle', true)
-      //** breaks with error cant find properties of duration
-      const speed = 2.5;
-      let playerVelocity = new Phaser.Math.Vector2();
-      if(this.inputKeys.left.isDown){
-        playerVelocity.x = -1
-      }else if (this.inputKeys.right.isDown){
-        playerVelocity.x = 1
-      }
-      if(this.inputKeys.up.isDown){
-        playerVelocity.y = -1
-      }else if (this.inputKeys.down.isDown){
-        playerVelocity.y = 1
-      }
-      playerVelocity.normalize()
-      playerVelocity.scale(speed)
-      this.setVelocity(playerVelocity.x, playerVelocity.y)
-
+    const speed = 1;
+    let playerVelocity = new Phaser.Math.Vector2();
+    if (this.inputKeys.left.isDown) {
+      playerVelocity.x = -1;
+    } else if (this.inputKeys.right.isDown) {
+      playerVelocity.x = 1;
+    }
+    if (this.inputKeys.up.isDown) {
+      playerVelocity.y = -1;
+    } else if (this.inputKeys.down.isDown) {
+      playerVelocity.y = 1;
+    }
+    playerVelocity.normalize();
+    playerVelocity.scale(speed);
+    this.setVelocity(playerVelocity.x, playerVelocity.y);
+    if (this.inputKeys.up.isDown && this.inputKeys.right.isDown) {
+      this.anims.play("cat_walk", true);
+    } else if (this.inputKeys.up.isDown) {
+      this.anims.play("cat_walk", true);
+    } else if (this.inputKeys.down.isDown && this.inputKeys.right.isDown) {
+      this.anims.play("cat_walk", true);
+    } else if (this.inputKeys.down.isDown) {
+      this.anims.play("cat_walk", true);
+    } else if (this.inputKeys.left.isDown || this.inputKeys.right.isDown) {
+      this.anims.play("cat_walk", true);
+    } else {
+      this.anims.play("cat_idle", true);
+    }
   }
 }
