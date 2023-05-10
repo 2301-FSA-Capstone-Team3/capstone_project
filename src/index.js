@@ -2,14 +2,15 @@ import Phaser from "phaser";
 import MainScene from "./MainScene.js";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 const config = {
-  width: 1000,
-  height: 2000,
-  backgroundColor: "#777777",
+  width: window.innerWidth,
+  height: window.innerHeight,
+  backgroundColor: "#333333",
   type: Phaser.AUTO,
   parent: "phaser-example",
   scene: [MainScene],
   scale: {
-    zoom: 2,
+    zoom: Phaser.Scale.ZOOM_4X,
+    mode:Phaser.Scale.FIT,
   },
   physics: {
     default: "matter",
