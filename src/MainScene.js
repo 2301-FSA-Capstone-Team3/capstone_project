@@ -30,14 +30,14 @@ export default class MainScene extends Phaser.Scene {
       texture: "cat_sprite",
       frame: "tile000",
     });
-    this.player = new Player({
+    this.player2 = new Player({
       scene: this,
       x: 50,
       y: 50,
       texture: "cat_sprite",
       frame: "tile000",
     });
-    this.player = new Player({
+    this.player3 = new Player({
       scene: this,
       x: 50,
       y: 50,
@@ -52,6 +52,7 @@ export default class MainScene extends Phaser.Scene {
     });
     this.cameras.main.startFollow(this.player);
     this.cameras.main.centerOn(this.player.x, this.player.y);
+    this.cameras.main.setViewport(this.player.x,this.player.y, window.innerWidth,window.innerHeight)
   }
   update() {
     this.player.update();
