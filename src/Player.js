@@ -1,6 +1,9 @@
 import mrmPng from "./assets/images/cat_sprite.png";
 const mrmAtlasjson = require("./assets/images/cat_sprite_atlas.json");
 const mrmAnims = require("./assets/images/cat_sprite_anim.json");
+import healthBar from "./assets/images/health_bar.png"
+const healthBarAtlasjson = require("./assets/images/health_bar_atlas.json")
+const healthbarAnims = require("./assets/images/health_bar_anim.json")
 export default class Player extends Phaser.Physics.Matter.Sprite {
   constructor(data) {
     let { scene, x, y, texture, frame } = data;
@@ -25,6 +28,8 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   static preload(scene) {
     scene.load.atlas("cat_sprite", mrmPng, mrmAtlasjson);
     scene.load.animation("cat_sprite_anims", mrmAnims);
+    scene.load.atlas("health_bar", healthBar, healthBarAtlasjson);
+    scene.load.animation("health_bar_anims", healthbarAnims);
   }
   create() {}
   update() {
