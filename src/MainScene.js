@@ -57,3 +57,4 @@ export default class MainScene extends Phaser.Scene {
     this.player.update();
   }
 }
+//delete this comment here
