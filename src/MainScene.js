@@ -3,13 +3,16 @@ import "phaser-matter-collision-plugin";
 
 import Player from "./Player.js";
 import MainMapTiles from "./assets/images/IceTileset.png";
+import Enemy from "./Enemy.js";
 const MainMapJSON = require("./assets/images/MainMap.json");
 export default class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
+    this.enemies = [];
   }
   preload() {
     Player.preload(this);
+    Enemy.preload(this);
     this.load.image("tiles", MainMapTiles);
     this.load.tilemapTiledJSON("MainMap", MainMapJSON);
   }
@@ -23,12 +26,8 @@ export default class MainScene extends Phaser.Scene {
     this.matter.world.convertTilemapLayer(layer1);
     layer2.setCollisionByProperty({ collides2: true });
     this.matter.world.convertTilemapLayer(layer2);
-    this.player = new Player({
-      scene: this,
-      x: 50,
-      y: 50,
-      texture: "cat_sprite",
-      frame: "tile000",
+    MainMap.getObjectLayer("Enemies").objects.forEach((enemy) => {
+      this.enemies.push(new Enemy({ scene: this, enemy }));
     });
     this.player = new Player({
       scene: this,
@@ -54,6 +53,7 @@ export default class MainScene extends Phaser.Scene {
     this.cameras.main.centerOn(this.player.x, this.player.y);
   }
   update() {
+    // this.enemies.forEach((enemy) => enemy.update());
     this.player.update();
   }
 }
