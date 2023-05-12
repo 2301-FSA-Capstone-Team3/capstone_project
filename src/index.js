@@ -18,10 +18,6 @@ const config = {
       debug: false,
       gravity: { y: 0 },
     },
-    arcade: {
-      debug: true,
-      gravity: { y: 0 }
-  },
   },
   plugins: {
     scene: [
