@@ -1,28 +1,44 @@
-import mainCharacterPNG from "./assets/images/male_main_character.png";
-const mainCharacterJSON = require("./assets/images/male_main_character_atlas.json");
-const mainCharacterAnimation = require("./assets/images/male_main_character_anim.json");
+
+import mrmPng from "./assets/images/cat_sprite.png";
+const mrmAtlasjson = require("./assets/images/cat_sprite_atlas.json");
+const mrmAnims = require("./assets/images/cat_sprite_anim.json");
+
+import healthBar from "./assets/images/health_bar.png"
+const healthBarAtlasjson = require("./assets/images/health_bar_atlas.json")
+const healthbarAnims = require("./assets/images/health_bar_anim.json")
 
 export default class Player extends Phaser.Physics.Matter.Sprite {
   constructor(data) {
     let { scene, x, y, texture, frame } = data;
     super(scene.matter.world, x, y, texture, frame);
     this.scene.add.existing(this);
+    const { Body, Bodies } = Phaser.Physics.Matter.Matter;
+    let playerCollider = Bodies.circle(this.x, this.y, 13, {
+      isSensor: false,
+      label: "playerCollider",
+    });
+    let playerSensor = Bodies.circle(this.x, this.y, 25, {
+      isSensor: true,
+      label: "playerSensor",
+    });
+    const compoundBody = Body.create({
+      parts: [playerCollider, playerSensor],
+      frictionAir: 0.35,
+    });
+    this.setExistingBody(compoundBody);
+    this.setFixedRotation();
   }
-
   static preload(scene) {
-    scene.load.atlas(
-      "male_main_character",
-      mainCharacterPNG,
-      mainCharacterJSON
-    );
-    scene.load.animation("male_main_character_anim", mainCharacterAnimation);
+    scene.load.atlas("cat_sprite", mrmPng, mrmAtlasjson);
+    scene.load.animation("cat_sprite_anims", mrmAnims);
+    scene.load.atlas("health_bar", healthBar, healthBarAtlasjson);
+    scene.load.animation("health_bar_anims", healthbarAnims);
   }
-
-  get velocity() {
-    return this.body.velocity;
-  }
+  create() {}
   update() {
-    const speed = 1;
+
+    const speed = 2.5;
+    
     let playerVelocity = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {
       playerVelocity.x = -1;
@@ -36,7 +52,6 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     }
     playerVelocity.normalize();
     playerVelocity.scale(speed);
-    this.setVelocity(playerVelocity.x, playerVelocity.y);
 
     if (playerVelocity.x < 0) {
       this.setFlipX(true);
@@ -44,36 +59,26 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
       this.setFlipX(false);
     }
 
+
+    this.setVelocity(playerVelocity.x, playerVelocity.y);
     if (this.inputKeys.up.isDown && this.inputKeys.right.isDown) {
-      this.anims.play("side_walk", true);
-    } else if (this.inputKeys.left.isDown && this.inputKeys.up.isDown) {
-      this.anims.play("side_walk", true);
-    } else if (this.inputKeys.left.isDown && this.inputKeys.down.isDown) {
-      this.anims.play("side_walk", true);
+      this.anims.play("cat_walk", true);
     } else if (this.inputKeys.up.isDown) {
-      this.anims.play("up_walk", true);
+      this.anims.play("cat_walk", true);
     } else if (this.inputKeys.down.isDown && this.inputKeys.right.isDown) {
-      this.anims.play("side_walk", true);
+      this.anims.play("cat_walk", true);
     } else if (this.inputKeys.down.isDown) {
-      this.anims.play("down_walk", true);
+      this.anims.play("cat_walk", true);
     } else if (this.inputKeys.left.isDown || this.inputKeys.right.isDown) {
-      this.anims.play("side_walk", true);
-      // } else if (this.inputKeys.attack.isDown && !this.isAttacking) {
-      //   this.isAttacking = true;
-      //   this.anims.play("side_attack");
-      //   let currentAnim = this.anims.currentAnim;
-      //   if (currentAnim) {
-      //     currentAnim.once(
-      //       "complete",
-      //       function (animation, frame) {
-      //         this.isAttacking = false;
-      //         this.anims.play("down_idle", true);
-      //       },
-      //       this
-      //     );
-      //   }
+      this.anims.play("cat_walk", true);
+    } else if (this.inputKeys.Attack.isDown) {
+      this.anims.play("cat_onetwo", true)
+    } else if (this.inputKeys.Attack2.isDown){
+      this.anims.play("cat_roundhouse",true)
+    }else if (this.inputKeys.Attack3.isDown){
+      this.anims.play("cat_uppercat", true)
     } else {
-      this.anims.play("down_idle", true);
+      this.anims.play("cat_idle", true);
     }
   }
 }

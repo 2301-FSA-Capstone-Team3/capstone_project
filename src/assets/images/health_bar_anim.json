@@ -1,0 +1,148 @@
+{
+    "anims": [
+        {
+            "key": "8hit",
+            "type": "frames",
+            "repeat": 1,
+            "frameRate": 5,
+            "frames": [
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar1"
+                },
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar0_[empty]"
+                }
+            ]
+        },
+        {
+            "key": "critical",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 5,
+            "frames": [
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar0_[empty]"
+                },
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar1"
+                }
+            ]
+        },
+        {
+            "key": "7hit",
+            "type": "frames",
+            "repeat": 1,
+            "frameRate": 5,
+            "frames": [
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar3"
+                },
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar1"
+                }
+            ]
+        },
+        {
+            "key": "6hit",
+            "type": "frames",
+            "repeat": 1,
+            "frameRate": 5,
+            "frames": [
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar5"
+                },
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar3"
+                }
+            ]
+        },
+        {
+            "key": "5hit",
+            "type": "frames",
+            "repeat": 1,
+            "frameRate": 5,
+            "frames": [
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar7"
+                },
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar5"
+                }
+            ]
+        },
+        {
+            "key": "4hit",
+            "type": "frames",
+            "repeat": 1,
+            "frameRate": 5,
+            "frames": [
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar9"
+                },
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar7"
+                }
+            ]
+        },
+        {
+            "key": "3hit",
+            "type": "frames",
+            "repeat": 1,
+            "frameRate": 5,
+            "frames": [
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar11"
+                },
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar9"
+                }
+            ]
+        },
+        {
+            "key": "2hit",
+            "type": "frames",
+            "repeat": 1,
+            "frameRate": 5,
+            "frames": [
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar13"
+                },
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar11"
+                }
+            ]
+        },
+        {
+            "key": "1hit",
+            "type": "frames",
+            "repeat": 1,
+            "frameRate": 5,
+            "frames": [
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar15_[full]"
+                },
+                {
+                    "key": "health_bar",
+                    "frame": "health_bar13"
+                }
+            ]
+        }
+    ]
+}
