@@ -30,6 +30,7 @@ export default class MainScene extends Phaser.Scene {
 
     MainMap.getObjectLayer("Enemies").objects.forEach((enemy)=> {
       this.enemies.push(new Enemy({ scene: this, enemy }))
+      // console.log(enemy)
     });
     this.player = new Player({
       scene: this,
@@ -63,7 +64,7 @@ export default class MainScene extends Phaser.Scene {
   update() {
     this.enemies.forEach((enemy) => enemy.update());
     this.player.update();
-    console.log(this.enemies)
+
   }
 }
 
