@@ -1,3 +1,4 @@
+
 import mrmPng from "./assets/images/cat_sprite.png";
 const mrmAtlasjson = require("./assets/images/cat_sprite_atlas.json");
 const mrmAnims = require("./assets/images/cat_sprite_anim.json");
@@ -37,6 +38,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   update() {
 
     const speed = 2.5;
+    
     let playerVelocity = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {
       playerVelocity.x = -1;
@@ -56,6 +58,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     } else if (playerVelocity.x > 0) {
       this.setFlipX(false);
     }
+
 
     this.setVelocity(playerVelocity.x, playerVelocity.y);
     if (this.inputKeys.up.isDown && this.inputKeys.right.isDown) {
