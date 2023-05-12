@@ -1,7 +1,7 @@
 
 export default class ExtendedEntity extends Phaser.Physics.Matter.Sprite {
   constructor(data) {
-    let { scene, x, y, texture, frame, depth, name, health, drops} = data;
+    let { scene, x, y, texture, frame, depth, name, health} = data;
     super(scene.matter.world, x, y, texture, frame);
     this.x += this.width/2;
     this.y -= this.height/2;

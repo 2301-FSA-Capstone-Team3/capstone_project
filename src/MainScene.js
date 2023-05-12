@@ -27,9 +27,10 @@ export default class MainScene extends Phaser.Scene {
     this.matter.world.convertTilemapLayer(layer1);
     layer2.setCollisionByProperty({ collides2: true });
     this.matter.world.convertTilemapLayer(layer2);
-    // MainMap.getObjectLayer("Enemies").objects.forEach((enemy)=> {
-    //   this.enemies.push(new Enemy({ scene: this, enemy }))
-    // });
+
+    MainMap.getObjectLayer("Enemies").objects.forEach((enemy)=> {
+      this.enemies.push(new Enemy({ scene: this, enemy }))
+    });
     this.player = new Player({
       scene: this,
       x: 50,
@@ -37,34 +38,15 @@ export default class MainScene extends Phaser.Scene {
       texture: "cat_sprite",
       frame: "tile000",
     });
-    this.enemy1 = new Enemy({
-      scene: this,
-      x: 200,
-      y: 200,
-      texture: "enemies",
-      frame: "troll_idle_1",
-    });
-    this.enemy2 = new Enemy({
-      scene: this,
-      x: 500,
-      y: 500,
-      texture: "enemies",
-      frame: "golem_idle_1",
-    });
-    this.enemy3 = new Enemy({
-      scene: this,
-      x: 1000,
-      y: 1000,
-      texture: "enemies",
-      frame: "normalmushroom_idle_1",
-    });
+    //need to factor this in player???~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     this.health = new healthBar({
       scene: this,
-      x:this.player.x,
-      y:this.player.y,
+      x:100,
+      y:0,
       texture:"health_bar",
       frame: "health_bar15_[full]",
     })
+    ////~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     this.player.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
@@ -79,11 +61,9 @@ export default class MainScene extends Phaser.Scene {
     this.cameras.main.setViewport(this.player.x,this.player.y, window.innerWidth,window.innerHeight)
   }
   update() {
-    // this.enemies.forEach((enemy) => enemy.update());
+    this.enemies.forEach((enemy) => enemy.update());
     this.player.update();
-    this.enemy1.update()
-    this.enemy2.update()
-    this.enemy3.update()
+    console.log(this.enemies)
   }
 }
 

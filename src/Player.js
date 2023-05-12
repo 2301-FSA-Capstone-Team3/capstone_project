@@ -35,31 +35,30 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   }
   create() {}
   update() {
+    const speed = 4.5;
 
-    const speed = 2.5;
-
-    let playerVelocity = new Phaser.Math.Vector2();
+    let playerDirection = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {
-      playerVelocity.x = -1;
+      playerDirection.x = -1;
     } else if (this.inputKeys.right.isDown) {
-      playerVelocity.x = 1;
+      playerDirection.x = 1;
     }
     if (this.inputKeys.up.isDown) {
-      playerVelocity.y = -1;
+      playerDirection.y = -1;
     } else if (this.inputKeys.down.isDown) {
-      playerVelocity.y = 1;
+      playerDirection.y = 1;
     }
-    playerVelocity.normalize();
-    playerVelocity.scale(speed);
+    playerDirection.normalize();
+    playerDirection.scale(speed);
 
-    if (playerVelocity.x < 0) {
+    if (playerDirection.x < 0) {
       this.setFlipX(true);
-    } else if (playerVelocity.x > 0) {
+    } else if (playerDirection.x > 0) {
       this.setFlipX(false);
     }
 
 
-    this.setVelocity(playerVelocity.x, playerVelocity.y);
+    this.setVelocity(playerDirection.x, playerDirection.y);
     if (this.inputKeys.up.isDown && this.inputKeys.right.isDown) {
       this.anims.play("cat_walk", true);
     } else if (this.inputKeys.up.isDown) {
