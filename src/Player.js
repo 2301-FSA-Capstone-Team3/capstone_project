@@ -1,6 +1,7 @@
 import mrmPng from "./assets/images/cat_sprite.png";
 const mrmAtlasjson = require("./assets/images/cat_sprite_atlas.json");
 const mrmAnims = require("./assets/images/cat_sprite_anim.json");
+
 export default class Player extends Phaser.Physics.Matter.Sprite {
   constructor(data) {
     let { scene, x, y, texture, frame } = data;
@@ -28,6 +29,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   }
   create() {}
   update() {
+
     const speed = 2.5;
     let playerVelocity = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {

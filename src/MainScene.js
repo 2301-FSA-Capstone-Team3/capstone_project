@@ -4,12 +4,15 @@ import "phaser-matter-collision-plugin";
 import Player from "./Player.js";
 import MainMapTiles from "./assets/images/IceTileset.png";
 const MainMapJSON = require("./assets/images/MainMap.json");
+import Enemy from "./Enemy.js";
 export default class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
   }
   preload() {
     Player.preload(this);
+    Enemy.preload(this);
+
     this.load.image("tiles", MainMapTiles);
     this.load.tilemapTiledJSON("MainMap", MainMapJSON);
   }
@@ -23,6 +26,8 @@ export default class MainScene extends Phaser.Scene {
     this.matter.world.convertTilemapLayer(layer1);
     layer2.setCollisionByProperty({ collides2: true });
     this.matter.world.convertTilemapLayer(layer2);
+
+
     this.player = new Player({
       scene: this,
       x: 50,
@@ -30,19 +35,26 @@ export default class MainScene extends Phaser.Scene {
       texture: "cat_sprite",
       frame: "tile000",
     });
-    this.player2 = new Player({
+    this.enemy1 = new Enemy({
       scene: this,
-      x: 50,
-      y: 50,
-      texture: "cat_sprite",
-      frame: "tile000",
+      x: 200,
+      y: 200,
+      texture: "enemies",
+      frame: "troll_idle_1",
     });
-    this.player3 = new Player({
+    this.enemy2 = new Enemy({
       scene: this,
-      x: 50,
-      y: 50,
-      texture: "cat_sprite",
-      frame: "tile000",
+      x: 500,
+      y: 500,
+      texture: "enemies",
+      frame: "golem_idle_1",
+    });
+    this.enemy3 = new Enemy({
+      scene: this,
+      x: 1000,
+      y: 1000,
+      texture: "enemies",
+      frame: "normalmushroom_idle_1",
     });
     this.player.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
@@ -56,5 +68,8 @@ export default class MainScene extends Phaser.Scene {
   }
   update() {
     this.player.update();
+    this.enemy1.update()
+    this.enemy2.update()
+    this.enemy3.update()
   }
 }
