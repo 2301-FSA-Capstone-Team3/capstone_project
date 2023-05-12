@@ -1,0 +1,216 @@
+{
+    "frames": [
+        {
+            "filename": "health_bar15_[full]",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 1,
+                "y": 1
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar14",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 1,
+                "y": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar13",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 1,
+                "y": 247
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar12",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 1,
+                "y": 370
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar0_[empty]",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 410,
+                "y": 1
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar1",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 410,
+                "y": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar2",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 410,
+                "y": 247
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar3",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 410,
+                "y": 370
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar11",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 1,
+                "y": 493
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar4",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 410,
+                "y": 493
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar6",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 1,
+                "y": 616
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar5",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 410,
+                "y": 616
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar7",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 1,
+                "y": 739
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar8",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 410,
+                "y": 739
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar9",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 1,
+                "y": 862
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "health_bar10_[normal]",
+            "frame": {
+                "w": 408,
+                "h": 122,
+                "x": 410,
+                "y": 862
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ],
+    "meta": {
+        "description": "Atlas generado con Atlas Packer Gamma V2",
+        "web": "https://gammafp.github.io/atlas-packer-phaser/"
+    }
+}

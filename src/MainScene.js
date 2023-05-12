@@ -2,6 +2,7 @@ import Phaser from "phaser";
 import "phaser-matter-collision-plugin";
 
 import Player from "./Player.js";
+import healthBar from "./Player.js"
 import MainMapTiles from "./assets/images/IceTileset.png";
 const MainMapJSON = require("./assets/images/MainMap.json");
 import Enemy from "./Enemy.js";
@@ -56,11 +57,21 @@ export default class MainScene extends Phaser.Scene {
       texture: "enemies",
       frame: "normalmushroom_idle_1",
     });
+    this.health = new healthBar({
+      scene: this,
+      x:this.player.x,
+      y:this.player.y,
+      texture:"health_bar",
+      frame: "health_bar15_[full]",
+    })
     this.player.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
       left: Phaser.Input.Keyboard.KeyCodes.A,
       right: Phaser.Input.Keyboard.KeyCodes.D,
+      Attack: Phaser.Input.Keyboard.KeyCodes.SPACE,
+      Attack2: Phaser.Input.Keyboard.KeyCodes.E,
+      Attack3: Phaser.Input.Keyboard.KeyCodes.Q,
     });
     this.cameras.main.startFollow(this.player);
     this.cameras.main.centerOn(this.player.x, this.player.y);
