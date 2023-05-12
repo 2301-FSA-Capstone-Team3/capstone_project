@@ -1,40 +1,25 @@
-import Phaser from 'phaser'
-import enemyPng from "./assets/images/enemies.png";
-const enemyAtlas = require("./assets/images/enemies_atlas.json");
+import enemy from "./assets/images/enemies.png";
+const enemyAtlasjson = require("./assets/images/enemies_atlas.json");
 const enemyAnims = require("./assets/images/enemies_anim.json");
-import ExtendedEntity from './ExtendedEntity';
 
-export default class Enemy extends ExtendedEntity{
-  constructor(data){
-    let { scene, x, y, texture, frame } = data;
-    super(scene.matter.world, x, y, texture, frame);
-    this.scene.add.existing(this);
-    const { Body, Bodies } = Phaser.Physics.Matter.Matter;
-    let enemyCollider = Bodies.circle(this.x, this.y, 13, {
-      isSensor: false,
-      label: "enemyCollider",
-    });
-    let enemySensor = Bodies.circle(this.x, this.y, 50, {
-      isSensor: true,
-      label: "enemySensor",
-    });
-    const compoundBody = Body.create({
-      parts: [enemyCollider, enemySensor],
-      frictionAir: 0.35,
-    });
-    this.setExistingBody(compoundBody);
-    this.setFixedRotation();
+export default class Enemy extends Phaser.Physics.Matter.Sprite {
+  constructor(data) {
+    let { scene, enemy } = data;
 
+    super(
+      scene.matter.world,
+      enemy.x,
+      enemy.y,
+      "enemies",
+      `${enemy.name}_idle_1`
+    );
+    this.name = enemy.name;
   }
-  static preload(scene){
-    scene.load.atlas("enemies", enemyPng, enemyAtlas);
+  static preload(scene) {
+    scene.load.atlas("enemies", enemy, enemyAtlasjson);
     scene.load.animation("enemies_anim", enemyAnims);
   }
-  create(){
-
-  }
   update() {
-
-
+    console.log("enemy update");
   }
 }
