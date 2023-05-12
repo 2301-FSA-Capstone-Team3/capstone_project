@@ -65,6 +65,12 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
       this.anims.play("cat_walk", true);
     } else if (this.inputKeys.left.isDown || this.inputKeys.right.isDown) {
       this.anims.play("cat_walk", true);
+    } else if (this.inputKeys.Attack.isDown) {
+      this.anims.play("cat_onetwo", true)
+    } else if (this.inputKeys.Attack2.isDown){
+      this.anims.play("cat_roundhouse",true)
+    }else if (this.inputKeys.Attack3.isDown){
+      this.anims.play("cat_uppercat", true)
     } else {
       this.anims.play("cat_idle", true);
     }
