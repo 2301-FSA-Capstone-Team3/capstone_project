@@ -14,7 +14,6 @@ export default class MainScene extends Phaser.Scene {
   preload() {
     Player.preload(this);
     Enemy.preload(this);
-    Enemy.preload(this);
 
     this.load.image("tiles", MainMapTiles);
     this.load.tilemapTiledJSON("MainMap", MainMapJSON);
