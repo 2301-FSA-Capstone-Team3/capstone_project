@@ -33,7 +33,6 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     scene.load.atlas("health_bar", healthBar, healthBarAtlasjson);
     scene.load.animation("health_bar_anims", healthbarAnims);
   }
-  create() {}
   update() {
     const speed = 4.5;
 
