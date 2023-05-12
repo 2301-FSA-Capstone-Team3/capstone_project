@@ -1,0 +1,284 @@
+{
+  "anims": [
+    {
+      "key": "death",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 3,
+      "frames": [
+        {
+          "key": "male_main_character",
+          "frame": "tile054"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile055"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile056"
+        }
+      ]
+    },
+    {
+      "key": "up_attack",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 6,
+      "frames": [
+        {
+          "key": "male_main_character",
+          "frame": "tile048"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile049"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile050"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile051"
+        }
+      ]
+    },
+    {
+      "key": "side_attack",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 6,
+      "frames": [
+        {
+          "key": "male_main_character",
+          "frame": "tile042"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile043"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile044"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile045"
+        }
+      ]
+    },
+    {
+      "key": "down_attack",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 6,
+      "frames": [
+        {
+          "key": "male_main_character",
+          "frame": "tile036"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile037"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile039"
+        }
+      ]
+    },
+    {
+      "key": "up_walk",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 6,
+      "frames": [
+        {
+          "key": "male_main_character",
+          "frame": "tile030"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile031"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile032"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile033"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile034"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile035"
+        }
+      ]
+    },
+    {
+      "key": "side_walk",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 6,
+      "frames": [
+        {
+          "key": "male_main_character",
+          "frame": "tile024"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile025"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile026"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile027"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile028"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile029"
+        }
+      ]
+    },
+    {
+      "key": "down_walk",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 6,
+      "frames": [
+        {
+          "key": "male_main_character",
+          "frame": "tile018"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile019"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile020"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile021"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile022"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile023"
+        }
+      ]
+    },
+    {
+      "key": "up_idle",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 4,
+      "frames": [
+        {
+          "key": "male_main_character",
+          "frame": "tile012"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile013"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile014"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile015"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile016"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile017"
+        }
+      ]
+    },
+    {
+      "key": "side_idle",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 4,
+      "frames": [
+        {
+          "key": "male_main_character",
+          "frame": "tile006"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile007"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile008"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile009"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile010"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile011"
+        }
+      ]
+    },
+    {
+      "key": "down_idle",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 4,
+      "frames": [
+        {
+          "key": "male_main_character",
+          "frame": "tile000"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile001"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile002"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile003"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile004"
+        },
+        {
+          "key": "male_main_character",
+          "frame": "tile005"
+        }
+      ]
+    }
+  ]
+}
