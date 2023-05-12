@@ -9,21 +9,24 @@ export default class ExtendedEntity extends Phaser.Physics.Matter.Sprite {
     this.health = health;
     this.pos = new Phaser.Math.Vector2(this.x, this.y);
     this.scene.add.existing(this);
-    const { Body, Bodies } = Phaser.Physics.Matter.Matter;
-    let playerCollider = Bodies.circle(this.x, this.y, 13, {
-      isSensor: false,
-      label: "playerCollider",
-    });
-    let playerSensor = Bodies.circle(this.x, this.y, 25, {
-      isSensor: true,
-      label: "playerSensor",
-    });
-    const compoundBody = Body.create({
-      parts: [playerCollider, playerSensor],
-      frictionAir: 0.35,
-    });
-    this.setExistingBody(compoundBody);
-    this.setFixedRotation();
+    //need to get entity position?
+    getpos=()=>{
+      this.pos.set(this.x, this.y);
+      return this.pos;
+    }
+    //need to get velocity?
+    getVel=()=>{
+      return this.body.velocity;
+    }
+    //need to know if the entity is dead - returns true if the health is greater than 0
+    getDead=()=>{
+      return this.health <= 0;
+    }
+    //need to decrease health by one
+    hit=()=>{
+      this.health--;
+      //more features can be stored here
+    }
   }
   static preload(scene) {
     scene.load.atlas("cat_sprite", mrmPng, mrmAtlasjson);
