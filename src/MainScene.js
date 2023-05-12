@@ -8,7 +8,6 @@ const MainMapJSON = require("./assets/images/MainMap.json");
 export default class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
-    this.enemies = [];
   }
   preload() {
     Player.preload(this);
