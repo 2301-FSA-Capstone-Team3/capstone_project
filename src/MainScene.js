@@ -1,9 +1,9 @@
 import Phaser from "phaser";
 import "phaser-matter-collision-plugin";
 
-import Player from "./Player.js";
+import Player from "./PlayerRay.js";
 import MainMapTiles from "./assets/images/IceTileset.png";
-import Enemy from "./Enemy.js";
+import Enemy from "./EnemyRay.js";
 const MainMapJSON = require("./assets/images/MainMap.json");
 export default class MainScene extends Phaser.Scene {
   constructor() {
