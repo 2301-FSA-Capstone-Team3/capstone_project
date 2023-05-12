@@ -1,10 +1,12 @@
 import mrmPng from "./assets/images/cat_sprite.png";
 const mrmAtlasjson = require("./assets/images/cat_sprite_atlas.json");
 const mrmAnims = require("./assets/images/cat_sprite_anim.json");
+
 export default class Player extends Phaser.Physics.Matter.Sprite {
   constructor(data) {
     let { scene, x, y, texture, frame } = data;
     super(scene.matter.world, x, y, texture, frame);
+    this.history = [{ a: x, b: y }];
     this.scene.add.existing(this);
     const { Body, Bodies } = Phaser.Physics.Matter.Matter;
     let playerCollider = Bodies.circle(this.x, this.y, 13, {
@@ -28,6 +30,19 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   }
   create() {}
   update() {
+    if (Math.abs(this.body.velocity.x) > 0 || Math.abs(this.body.velocity.y) > 0) {
+      const { x, y } = this;
+      if (!Number.isNaN(x) && !Number.isNaN(y)) {
+        this.history.push({ a: x, b: y });
+      }
+
+      // If the length of the history array is over a certain size
+      // then remove the oldest (first) element
+      if (this.history.length > 5) {
+        this.history.shift();
+      }
+    }
+
     const speed = 2.5;
     let playerVelocity = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {
