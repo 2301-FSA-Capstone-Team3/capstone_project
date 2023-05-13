@@ -39,15 +39,6 @@ export default class MainScene extends Phaser.Scene {
       texture: "cat_sprite",
       frame: "tile000",
     });
-    //need to factor this in player???~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    this.health = new healthBar({
-      scene: this,
-      x:100,
-      y:0,
-      texture:"health_bar",
-      frame: "health_bar15_[full]",
-    })
-    ////~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     this.player.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
