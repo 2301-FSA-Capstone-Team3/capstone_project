@@ -1,30 +1,26 @@
-import Phaser from 'phaser'
+import Phaser from "phaser";
 import enemyPng from "./assets/images/enemies.png";
 const enemyAtlas = require("./assets/images/enemies_atlas.json");
 const enemyAnims = require("./assets/images/enemies_anim.json");
 import ExtendedEntity from './ExtendedEntity';
 import { PhaserMatterCollisionPlugin as matterCollision }  from 'phaser-matter-collision-plugin';
 
-export default class Enemy extends ExtendedEntity{
-  static preload(scene){
+export default class Enemy extends ExtendedEntity {
+  static preload(scene) {
     scene.load.atlas("enemies", enemyPng, enemyAtlas);
     scene.load.animation("enemies_anim", enemyAnims);
   }
-
-
   constructor(data){
     let { scene, enemy, target} = data;
     let health = enemy.properties.find(p=>p.name=='health').value
     super({scene, x:enemy.x, y:enemy.y , texture:'enemies', frame:`${enemy.name}_idle_1`, health, name:enemy.name});
-    this.target = target
-
-
+    this.target = target  
     const { Body, Bodies } = Phaser.Physics.Matter.Matter;
-    let enemyCollider = Bodies.circle(this.x, this.y, this.width/3, {
+    let enemyCollider = Bodies.circle(this.x, this.y, this.width / 3, {
       isSensor: false,
       label: "enemyCollider",
     });
-    let enemySensor = Bodies.circle(this.x, this.y, this.width*2, {
+    let enemySensor = Bodies.circle(this.x, this.y, this.width * 2, {
       isSensor: true,
       label: "enemySensor",
     });
@@ -48,8 +44,6 @@ export default class Enemy extends ExtendedEntity{
       return
     }
     target.hit()
-  }
-  update() {
     // console.log('enemyUpdate')
     if(this.Dead) return
 
@@ -71,7 +65,11 @@ export default class Enemy extends ExtendedEntity{
         this.attacktimer = setInterval(this.attack(this.attacking),500,this.attacking)
       }
     //   console.log(direction)
+    this.setFlipX(direction.x < 0);
+    if (Math.abs(direction.x) > 0.1 || Math.abs(direction.y) > 0.1) {
+      this.anims.play(`${this.name}_walk`, true);
+    } else {
+      this.anims.play(`${this.name}_idle`, true);
     }
-    // console.log(this.target)
   }
 }
