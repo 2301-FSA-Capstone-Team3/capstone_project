@@ -37,6 +37,7 @@ export default class Player extends ExtendedEntity {
     scene.load.animation("health_bar_anims", healthbarAnims);
   }
   update() {
+    if(this.Dead)return
     const speed = 4.5;
 
     let playerDirection = new Phaser.Math.Vector2();
@@ -83,4 +84,8 @@ export default class Player extends ExtendedEntity {
 
     this.healthBarSprite.setPosition(this.x, this.y-15)
   }
+  onDead(){
+    this.scene.lights.removeLight()
+    this.scene.time()
+    }
 }

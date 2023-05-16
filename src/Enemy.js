@@ -30,7 +30,7 @@ export default class Enemy extends ExtendedEntity{
     });
     const compoundBody = Body.create({
       parts: [enemyCollider, enemySensor],
-      frictionAir: 1,
+      frictionAir: 0.35,
     });
     this.setExistingBody(compoundBody);
     this.setFixedRotation();
@@ -42,14 +42,10 @@ export default class Enemy extends ExtendedEntity{
         context:this.scene,
     });
   }
-  create(){
-
-
-
-  }
   attack=(target)=>{
     if(target.Dead || this.Dead){
-      clearInterval()
+      clearInterval(this.attacktimer)
+      return
     }
     target.hit()
   }
@@ -58,19 +54,21 @@ export default class Enemy extends ExtendedEntity{
     if(this.Dead) return
 
     if(this.attacking){
-      let player = this.attacking.pos
-      let direction = player.subtract(this.pos)
+      let direction = new Phaser.Math.Vector2();
+      direction = this.attacking.pos.subtract(this.pos)
+      // direction.scale(4)
       if(direction.length()>24){
         let v = direction.normalize()
         this.setVelocityX(direction.x)
         this.setVelocityY(direction.y)
+
         if(this.attacktimer){
           clearInterval(this.attacktimer)
           this.attacktimer = null;
         }
       }else{
         if(this.attacktimer == null)
-        this.attacktimer = setInterval(this.attack(this.target),1000,this.attacking)
+        this.attacktimer = setInterval(this.attack(this.attacking),500,this.attacking)
       }
     //   console.log(direction)
     }
