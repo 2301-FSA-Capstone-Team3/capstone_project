@@ -14,7 +14,7 @@ export default class Enemy extends ExtendedEntity {
     let { scene, enemy, target} = data;
     let health = enemy.properties.find(p=>p.name=='health').value
     super({scene, x:enemy.x, y:enemy.y , texture:'enemies', frame:`${enemy.name}_idle_1`, health, name:enemy.name});
-    this.target = target  
+    this.target = target
     const { Body, Bodies } = Phaser.Physics.Matter.Matter;
     let enemyCollider = Bodies.circle(this.x, this.y, this.width / 3, {
       isSensor: false,
@@ -46,30 +46,31 @@ export default class Enemy extends ExtendedEntity {
     target.hit()
     // console.log('enemyUpdate')
     if(this.Dead) return
+  }
 
     if(this.attacking){
       let direction = new Phaser.Math.Vector2();
-      direction = this.attacking.pos.subtract(this.pos)
+      direction = this.attacking.pos.subtract(this._pos)
       // direction.scale(4)
+      // this.setFlipX(direction.x < 0);
+      // if (Math.abs(direction.x) > 0.1 || Math.abs(direction.y) > 0.1) {
+      //   this.anims.play(`${this.name}_walk`, true);
+      // } else {
+      //   this.anims.play(`${this.name}_idle`, true);
+      // }
       if(direction.length()>24){
         let v = direction.normalize()
         this.setVelocityX(direction.x)
         this.setVelocityY(direction.y)
-
-        if(this.attacktimer){
-          clearInterval(this.attacktimer)
-          this.attacktimer = null;
+          if(this.attacktimer){
+            clearInterval(this.attacktimer)
+            this.attacktimer = null;
+          }
+        }else{
+          if(this.attacktimer == null)
+          this.attacktimer = setInterval(this.attack(this.attacking),500,this.attacking)
         }
-      }else{
-        if(this.attacktimer == null)
-        this.attacktimer = setInterval(this.attack(this.attacking),500,this.attacking)
-      }
     //   console.log(direction)
-    this.setFlipX(direction.x < 0);
-    if (Math.abs(direction.x) > 0.1 || Math.abs(direction.y) > 0.1) {
-      this.anims.play(`${this.name}_walk`, true);
-    } else {
-      this.anims.play(`${this.name}_idle`, true);
     }
   }
 }
