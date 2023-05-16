@@ -27,18 +27,19 @@ export default class MainScene extends Phaser.Scene {
     this.matter.world.convertTilemapLayer(layer1);
     layer2.setCollisionByProperty({ collides2: true });
     this.matter.world.convertTilemapLayer(layer2);
-
+    this.player = new Player({
+          scene: this,
+          x: 50,
+          y: 50,
+          texture: "cat_sprite",
+          frame: "tile000",
+          name: 'player'
+        });
     MainMap.getObjectLayer("Enemies").objects.forEach((enemy)=> {
-      this.enemies.push(new Enemy({ scene: this, enemy }))
+      this.enemies.push(new Enemy({ scene: this, enemy, target:this.player}))
       // console.log(enemy)
     });
-    this.player = new Player({
-      scene: this,
-      x: 50,
-      y: 50,
-      texture: "cat_sprite",
-      frame: "tile000",
-    });
+
     this.player.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
@@ -55,7 +56,8 @@ export default class MainScene extends Phaser.Scene {
   update() {
     this.enemies.forEach((enemy) => enemy.update());
     this.player.update();
-
+    console.log(this.player.health)
   }
 }
+
 

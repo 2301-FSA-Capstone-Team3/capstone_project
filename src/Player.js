@@ -1,3 +1,4 @@
+import ExtendedEntity from "./ExtendedEntity";
 import mrmPng from "./assets/images/cat_sprite.png";
 const mrmAtlasjson = require("./assets/images/cat_sprite_atlas.json");
 const mrmAnims = require("./assets/images/cat_sprite_anim.json");
@@ -5,15 +6,14 @@ import healthBar from "./assets/images/health_bar.png"
 const healthBarAtlasjson = require("./assets/images/health_bar_atlas.json")
 const healthbarAnims = require("./assets/images/health_bar_anim.json")
 
-export default class Player extends Phaser.Physics.Matter.Sprite {
+export default class Player extends ExtendedEntity {
   constructor(data) {
-    let { scene, x, y, texture, frame } = data;
-    super(scene.matter.world, x, y, texture, frame);
+    let { scene, x, y, texture, frame, name } = data;
+    super({scene, x:x, y:y , texture:texture, frame:frame, health: 9, name: name});
     this.touching = []
     this.healthBarSprite = new Phaser.GameObjects.Sprite(this.scene, 0, 0,"health_bar", "health_bar15_[full]")
     this.healthBarSprite.setScale(0.1,0.2)
     this.scene.add.existing(this.healthBarSprite)
-    this.scene.add.existing(this);
     const { Body, Bodies } = Phaser.Physics.Matter.Matter;
     let playerCollider = Bodies.circle(this.x, this.y, 13, {
       isSensor: false,
@@ -37,6 +37,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     scene.load.animation("health_bar_anims", healthbarAnims);
   }
   update() {
+    if(this.Dead)return
     const speed = 4.5;
 
     let playerDirection = new Phaser.Math.Vector2();
@@ -83,4 +84,8 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
 
     this.healthBarSprite.setPosition(this.x, this.y-15)
   }
+  onDead(){
+    this.scene.lights.removeLight()
+    this.scene.time()
+    }
 }
