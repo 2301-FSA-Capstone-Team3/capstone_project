@@ -29,8 +29,8 @@ export default class MainScene extends Phaser.Scene {
     this.matter.world.convertTilemapLayer(layer2);
     this.player = new Player({
           scene: this,
-          x: 50,
-          y: 50,
+          x: 444,
+          y: 888,
           texture: "cat_sprite",
           frame: "tile000",
           name: 'player'
@@ -51,7 +51,6 @@ export default class MainScene extends Phaser.Scene {
     });
     this.cameras.main.startFollow(this.player);
     this.cameras.main.centerOn(this.player.x, this.player.y);
-    this.cameras.main.setViewport(this.player.x,this.player.y, window.innerWidth,window.innerHeight)
   }
   update() {
     this.enemies.forEach((enemy) => enemy.update());

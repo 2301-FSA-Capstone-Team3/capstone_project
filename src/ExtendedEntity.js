@@ -22,12 +22,12 @@ export default class ExtendedEntity extends Phaser.Physics.Matter.Sprite {
   }
   //need to know if the entity is dead - returns true if the health is greater than 0
   get Dead(){
-    
+
     return this.health <= 0;
   }
   //need to decrease health by one
   hit(){
-    this.health--;
+    this.health= this.health-1;
     if(this.Dead){
       console.log(this.name, 'is dead')
     }
