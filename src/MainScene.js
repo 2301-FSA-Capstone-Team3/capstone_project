@@ -10,6 +10,7 @@ export default class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
     this.enemies = []
+
   }
   preload() {
     Player.preload(this);
@@ -19,6 +20,7 @@ export default class MainScene extends Phaser.Scene {
     this.load.tilemapTiledJSON("MainMap", MainMapJSON);
   }
   create() {
+    this.add.text(20, 20, "Playing game", {font: "25px Arial", fill: "yellow" })
     const MainMap = this.make.tilemap({ key: "MainMap" });
     const tileset = MainMap.addTilesetImage("IceTileset", "tiles", 32, 32);
     const layer1 = MainMap.createLayer("Tile Layer 1", tileset, 0, 0);
@@ -50,7 +52,7 @@ export default class MainScene extends Phaser.Scene {
     });
     this.cameras.main.startFollow(this.player);
     this.cameras.main.centerOn(this.player.x, this.player.y);
-    this.cameras.main.setViewport(this.player.x,this.player.y, window.innerWidth,window.innerHeight)
+    
   }
   update() {
     this.enemies.forEach((enemy) => enemy.update());
