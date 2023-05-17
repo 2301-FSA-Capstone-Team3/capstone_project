@@ -49,7 +49,7 @@ update(){
   if(this.Dead) return
     if(this.attacking){
       let direction = new Phaser.Math.Vector2();
-      direction = this.attacking.pos.subtract(this.pos)
+      direction = this.target.pos.subtract(this.pos)
       // direction.scale(4)
       this.setFlipX(direction.x < 0);
       if (Math.abs(direction.x) > 0.1 || Math.abs(direction.y) > 0.1) {

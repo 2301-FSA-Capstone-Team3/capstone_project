@@ -2,7 +2,6 @@
 import Phaser from "phaser";
 import "phaser-matter-collision-plugin";
 import Player from "./Player.js";
-import healthBar from "./Player.js"
 import MainMapTiles from "./assets/images/IceTileset.png";
 const MainMapJSON = require("./assets/images/MainMap.json");
 import Enemy from "./Enemy.js";
@@ -18,6 +17,7 @@ export default class MainScene extends Phaser.Scene {
     this.load.image("tiles", MainMapTiles);
     this.load.tilemapTiledJSON("MainMap", MainMapJSON);
   }
+
   create() {
     const MainMap = this.make.tilemap({ key: "MainMap" });
     const tileset = MainMap.addTilesetImage("IceTileset", "tiles", 32, 32);
@@ -56,6 +56,30 @@ export default class MainScene extends Phaser.Scene {
     this.enemies.forEach((enemy) => enemy.update());
     this.player.update();
     console.log(this.player.health)
+  }
+  showGameOver(){
+    // this.scene.start('GameOver')
+    this.scene.launch('GameOver')
+    // {Time: this.time}
+    // let panel = this.scene.get('GameOver')
+    // panel.events.on('clickHome', this.handleHome, this)
+    // panel.events.on('clickTryAgain', this.handleTryAgain, this)
+  }
+  closeGameOver(){
+    this.scene.stop('GameOver')
+  }
+  handleTryAgain(){
+    console.log('restart level')
+    this.closeGameOver()
+    this.restartGame()
+  }
+  handleHome(){
+    console.log('Start Screen')
+    this.closeGameOver();
+    // this.goHome()
+  }
+  restartGame(){
+    this.scene.restart()
   }
 }
 

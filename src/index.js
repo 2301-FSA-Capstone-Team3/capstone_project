@@ -1,6 +1,8 @@
 
 import Phaser from "phaser";
 import MainScene from "./MainScene.js";
+import GameOver from "./GameOver.js";
+import PreLoadScene from "./Preload.js";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 const config = {
   width: window.innerWidth,
@@ -8,7 +10,7 @@ const config = {
   backgroundColor: "#333333",
   type: Phaser.AUTO,
   parent: "phaser-example",
-  scene: [MainScene],
+  scene: [ PreLoadScene, MainScene,GameOver],
   scale: {
     zoom: Phaser.Scale.ZOOM_4X,
     mode:Phaser.Scale.FIT,
