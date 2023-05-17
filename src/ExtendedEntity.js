@@ -25,7 +25,7 @@ export default class ExtendedEntity extends Phaser.Physics.Matter.Sprite {
 
     return this.health <= 0;
   }
-  onDeath(){}
+  onDeath(){this.anims.stop()}
   //need to decrease health by one
   hit(){
     this.health--;

@@ -40,6 +40,13 @@ export default class Player extends ExtendedEntity {
     scene.load.atlas("health_bar", healthBar, healthBarAtlasjson);
     scene.load.animation("health_bar_anims", healthbarAnims);
   }
+  attack=(target)=>{
+    if(this.scene.enemies.includes(target)){
+       target.hit()
+    }else{
+      return
+    }
+  }
   updateHPBar(){
       if(this.health == 9) return
       if(this.health == 8){this.healthBarSprite.anims.play(`1hit`, true);}
@@ -109,7 +116,7 @@ export default class Player extends ExtendedEntity {
 
   }
   onDeath(){
-    this.anims.stop()
+    
     this.scene.showGameOver()
 
     }

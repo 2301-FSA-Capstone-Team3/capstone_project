@@ -14,10 +14,10 @@ export default class GameOver extends Phaser.Scene{
     this.add.image(777,555, 'GG')
     let text = this.add.text(
       777, 555,
-      'Survival is not a winning game',
+      'Survival Is Not A Winning Game',
       {
         font: '24px Arial',
-        fill: 'fff',
+        fill: '#fff',
         align: 'center'
       }
     )
