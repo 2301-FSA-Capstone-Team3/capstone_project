@@ -45,6 +45,12 @@ export default class Enemy extends ExtendedEntity {
       return
     }
   }
+  onDeath(){
+    this.scene.makeBabies(this)
+    this.anims.stop()
+    this.x = 0
+    this.y = 0
+  }
 update(){
   if(this.Dead) return
     if(this.attacking){

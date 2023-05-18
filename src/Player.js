@@ -116,8 +116,6 @@ export default class Player extends ExtendedEntity {
 
   }
   onDeath(){
-    
     this.scene.showGameOver()
-
     }
 }

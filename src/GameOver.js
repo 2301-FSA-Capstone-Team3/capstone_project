@@ -3,10 +3,10 @@ export default class GameOver extends Phaser.Scene{
   constructor(){
     super({key:'GameOver', active:false})
   }
-  // init(data){
-  //   this.score = data.time
+  init(data){
+    this.score = data.kills
 
-  // }
+  }
   preload(){
     this.load.image('GG', Game_Over)
   }
