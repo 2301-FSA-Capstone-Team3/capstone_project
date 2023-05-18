@@ -1,9 +1,11 @@
 
 import Phaser from "phaser";
+import Loadmenu from "./LoadMenu.js";
 import MainScene from "./MainScene.js";
 import GameOver from "./GameOver.js";
 import PreLoadScene from "./Preload.js";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
+import Mainmenu from "./Mainmenu.js";
 const config = {
   width: window.innerWidth,
   height: window.innerHeight,
@@ -14,6 +16,7 @@ const config = {
   scale: {
     zoom: Phaser.Scale.ZOOM_4X,
     mode:Phaser.Scale.FIT,
+    
   },
   physics: {
     default: "matter",

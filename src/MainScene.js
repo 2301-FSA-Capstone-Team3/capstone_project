@@ -9,6 +9,7 @@ export default class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
     this.enemies = []
+
   }
   preload() {
     Player.preload(this);
@@ -19,6 +20,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
+    this.add.text(20, 20, "Playing game", {font: "25px Arial", fill: "yellow" })
     const MainMap = this.make.tilemap({ key: "MainMap" });
     const tileset = MainMap.addTilesetImage("IceTileset", "tiles", 32, 32);
     const layer1 = MainMap.createLayer("Tile Layer 1", tileset, 0, 0);
