@@ -15,7 +15,7 @@ export default class Player extends ExtendedEntity {
       y: y,
       texture: texture,
       frame: frame,
-      health: 1,
+      health: 9,
       name: name,
     });
     this.healthBarSprite = new Phaser.GameObjects.Sprite(
