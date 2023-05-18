@@ -1,4 +1,3 @@
-
 import Phaser from "phaser";
 import Loadmenu from "./LoadMenu.js";
 import MainScene from "./MainScene.js";
@@ -12,11 +11,10 @@ const config = {
   backgroundColor: "#333333",
   type: Phaser.AUTO,
   parent: "phaser-example",
-  scene: [ PreLoadScene, MainScene,GameOver],
+  scene: [Mainmenu, PreLoadScene, MainScene, GameOver],
   scale: {
     zoom: Phaser.Scale.ZOOM_4X,
-    mode:Phaser.Scale.FIT,
-    
+    mode: Phaser.Scale.FIT,
   },
   physics: {
     default: "matter",
