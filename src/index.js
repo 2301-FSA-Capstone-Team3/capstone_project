@@ -2,6 +2,8 @@
 import Phaser from "phaser";
 import Loadmenu from "./LoadMenu.js";
 import MainScene from "./MainScene.js";
+import GameOver from "./GameOver.js";
+import PreLoadScene from "./Preload.js";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Mainmenu from "./Mainmenu.js";
 const config = {
@@ -10,7 +12,7 @@ const config = {
   backgroundColor: "#333333",
   type: Phaser.AUTO,
   parent: "phaser-example",
-  scene: [Loadmenu, Mainmenu, MainScene],
+  scene: [ PreLoadScene, MainScene,GameOver],
   scale: {
     zoom: Phaser.Scale.ZOOM_4X,
     mode:Phaser.Scale.FIT,

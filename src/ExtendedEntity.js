@@ -8,25 +8,32 @@ export default class ExtendedEntity extends Phaser.Physics.Matter.Sprite {
     this.depth = depth || 1;
     this.name = name;
     this.health = health;
-    this.pos = new Phaser.Math.Vector2(this.x, this.y);
+    this._pos = new Phaser.Math.Vector2(this.x, this.y);
     this.scene.add.existing(this);
-    //need to get entity position?
-    const getpos=()=>{
-      this.pos.set(this.x, this.y);
-      return this.pos;
-    }
-    //need to get velocity?
-    const getVel=()=>{
-      return this.body.velocity;
-    }
-    //need to know if the entity is dead - returns true if the health is greater than 0
-    const getDead=()=>{
-      return this.health <= 0;
-    }
-    //need to decrease health by one
-    const hit=()=>{
-      this.health--;
-      //more features can be stored here
-    }
   }
+  //need to get entity position?
+  get pos(){
+    this._pos.set(this.x, this.y);
+    return this._pos;
+  }
+  //need to get velocity?
+  get Vel(){
+    return this.body.velocity;
+  }
+  //need to know if the entity is dead - returns true if the health is greater than 0
+  get Dead(){
+
+    return this.health <= 0;
+  }
+  onDeath(){this.anims.stop()}
+  //need to decrease health by one
+  hit(){
+    this.health--;
+    if(this.Dead){
+      this.onDeath();
+      console.log(this.name, 'is dead')
+    }
+    //more features can be stored here
+  }
+
 }

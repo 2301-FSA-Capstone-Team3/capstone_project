@@ -2,7 +2,6 @@
 import Phaser from "phaser";
 import "phaser-matter-collision-plugin";
 import Player from "./Player.js";
-import healthBar from "./Player.js"
 import MainMapTiles from "./assets/images/IceTileset.png";
 const MainMapJSON = require("./assets/images/MainMap.json");
 import Enemy from "./Enemy.js";
@@ -19,6 +18,7 @@ export default class MainScene extends Phaser.Scene {
     this.load.image("tiles", MainMapTiles);
     this.load.tilemapTiledJSON("MainMap", MainMapJSON);
   }
+
   create() {
     this.add.text(20, 20, "Playing game", {font: "25px Arial", fill: "yellow" })
     const MainMap = this.make.tilemap({ key: "MainMap" });
@@ -29,35 +29,65 @@ export default class MainScene extends Phaser.Scene {
     this.matter.world.convertTilemapLayer(layer1);
     layer2.setCollisionByProperty({ collides2: true });
     this.matter.world.convertTilemapLayer(layer2);
-
-    MainMap.getObjectLayer("Enemies").objects.forEach((enemy)=> {
-      this.enemies.push(new Enemy({ scene: this, enemy }))
-      // console.log(enemy)
-    });
     this.player = new Player({
-      scene: this,
-      x: 50,
-      y: 50,
-      texture: "cat_sprite",
-      frame: "tile000",
-    });
-    this.player.inputKeys = this.input.keyboard.addKeys({
-      up: Phaser.Input.Keyboard.KeyCodes.W,
-      down: Phaser.Input.Keyboard.KeyCodes.S,
-      left: Phaser.Input.Keyboard.KeyCodes.A,
-      right: Phaser.Input.Keyboard.KeyCodes.D,
+          scene: this,
+          x: 444,
+          y: 888,
+          texture: "cat_sprite",
+          frame: "tile000",
+          name: 'player'
+        });
+        MainMap.getObjectLayer("Enemies").objects.forEach((enemy)=> {
+          this.enemies.push(new Enemy({ scene: this, enemy, target:this.player}))
+        })
+
+        this.makeBabies=(foe)=>{
+          let batter = MainMap.getObjectLayer("Enemies").objects.filter(e=> e.name === foe.name)
+          console.log(batter.length)
+          let rando = Math.floor(Math.random()*(batter.length-0))
+          const enemy = batter[rando];
+            this.enemies.push(new Enemy({ scene: this, enemy, target:this.player}))
+        }
+
+        this.player.inputKeys = this.input.keyboard.addKeys({
+          up: Phaser.Input.Keyboard.KeyCodes.W,
+          down: Phaser.Input.Keyboard.KeyCodes.S,
+          left: Phaser.Input.Keyboard.KeyCodes.A,
+          right: Phaser.Input.Keyboard.KeyCodes.D,
       Attack: Phaser.Input.Keyboard.KeyCodes.SPACE,
       Attack2: Phaser.Input.Keyboard.KeyCodes.E,
       Attack3: Phaser.Input.Keyboard.KeyCodes.Q,
     });
     this.cameras.main.startFollow(this.player);
     this.cameras.main.centerOn(this.player.x, this.player.y);
-    
   }
+
   update() {
     this.enemies.forEach((enemy) => enemy.update());
     this.player.update();
-
+    // console.log(this.player.health)
   }
+  showGameOver(){
+    // this.scene.start('GameOver')
+    this.scene.launch('GameOver',{kills: this.enemies.length})
+  }
+  closeGameOver(){
+    this.scene.stop('GameOver')
+  }
+  handleTryAgain(){
+    console.log('restart level')
+    this.closeGameOver()
+    this.restartGame()
+  }
+  handleHome(){
+    console.log('Start Screen')
+    this.closeGameOver();
+    // this.goHome()
+  }
+  restartGame(){
+    this.scene.restart()
+  }
+
 }
+
 
