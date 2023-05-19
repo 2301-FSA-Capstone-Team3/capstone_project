@@ -25,13 +25,15 @@ export default class Loadmenu extends Phaser.Scene {
 
         });
 
-        this.load.on("complete", () => {
-            this.scene.start("Mainmenu", Mainmenu);
-            console.log("Let's roll!");
-        });
+        // this.load.on("complete", () => {
+        //     this.scene.start("Mainmenu", Mainmenu);
+        //     console.log("Let's roll!");
+        
     }
 
     create() {
         this.add.text(20, 20, "Loading Game...");
+     
     }
 }
+
