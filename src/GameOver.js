@@ -1,4 +1,5 @@
 import Game_Over from './assets/images/GAME_OVER.jpg'
+import MainScene from './MainScene'
 export default class GameOver extends Phaser.Scene{
   constructor(){
     super({key:'GameOver', active:false})
@@ -32,6 +33,7 @@ export default class GameOver extends Phaser.Scene{
     )
 
     // text.anchor.set(0.5)
-    this.input.on('pointerdown', ()=> this.scene.restart('MainScene'))
+    this.input.on('pointerdown', ()=> this.scene.start('Mainmenu'))
+    this.input.on('pointerdown', ()=> this.scene.stop("MainScene"))
   }
 }

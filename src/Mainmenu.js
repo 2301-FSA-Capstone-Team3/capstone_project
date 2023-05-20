@@ -1,7 +1,7 @@
 import playButton from "./assets/images/play_button.png";
 import MenuScreen from "./assets/images/menu_screen.png";
 import optionButton from "./assets/images/options_button.png";
-
+import PreLoadScene from "./Preload.js";
 export default class Mainmenu extends Phaser.Scene {
   constructor() {
     super("Mainmenu");
@@ -21,11 +21,13 @@ export default class Mainmenu extends Phaser.Scene {
         "play_button"
       )
       .setDepth(1);
-    const optionButton = this.add.image(
-      this.game.renderer.width / 2,
-      this.game.renderer.height / 2 + 100,
-      "options_button"
-    );
+    const optionButton = this.add
+      .image(
+        this.game.renderer.width / 2,
+        this.game.renderer.height / 2 + 100,
+        "options_button"
+      )
+      .setDepth(1);
 
     playButton.setInteractive();
     playButton.on("pointerdown", () => {
@@ -41,6 +43,7 @@ export default class Mainmenu extends Phaser.Scene {
 
     optionButton.setInteractive();
     optionButton.on("pointerdown", () => {
+      this.scene.start(" PreLoadScene,", PreLoadScene);
       console.log("Options button clicked");
     });
     optionButton.on("pointerout", () => {
@@ -50,7 +53,7 @@ export default class Mainmenu extends Phaser.Scene {
       console.log("let go of options");
     });
 
-    this.add.image(0, 0, "menu_screen").setOrigin(0);
+    this.add.image(-0, -0, "menu_screen").setOrigin(-0, -0);
 
     console.log("You're here");
   }
