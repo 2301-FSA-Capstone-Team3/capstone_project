@@ -35,5 +35,4 @@ export default class ExtendedEntity extends Phaser.Physics.Matter.Sprite {
     }
     //more features can be stored here
   }
-
 }
