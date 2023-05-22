@@ -33,7 +33,20 @@ export default class GameOver extends Phaser.Scene{
     )
 
     // text.anchor.set(0.5)
-    this.input.on('pointerdown', ()=> this.scene.start('Mainmenu'))
-    this.input.on('pointerdown', ()=> this.scene.stop("MainScene"))
+    this.input.on('pointerdown', ()=>{
+      this.scene.stop('GameOver')
+      this.scene.stop('MainScene')
+      this.scene.stop('Preload')
+      this.scene.stop('Mainmenu')
+      this.scene.stop('LoadMenu')
+      this.events.off()
+      // this.scene.manager.destroy()
+      //  ('MainScene')
+      // console.log(this.game.cache)
+      // this.scene.restart('MainScene')
+      this.scene.create()
+      this.scene.start('Mainmenu')
+
+  } )
   }
 }

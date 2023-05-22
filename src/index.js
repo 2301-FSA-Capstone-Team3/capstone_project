@@ -11,7 +11,7 @@ const config = {
   height: window.innerHeight,
   backgroundColor: "#333333",
   type: Phaser.AUTO,
-  parent: "phaser-example",
+  parent: "survival-game",
   scene: [Mainmenu, MainScene, Loadmenu, PreLoadScene, GameOver],
   scale: {
     zoom: Phaser.Scale.ZOOM_4X,

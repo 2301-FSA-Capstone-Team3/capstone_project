@@ -43,7 +43,7 @@ export default class Mainmenu extends Phaser.Scene {
 
     optionButton.setInteractive();
     optionButton.on("pointerdown", () => {
-      this.scene.start(" PreLoadScene,", PreLoadScene);
+      this.scene.start("preload");
       console.log("Options button clicked");
     });
     optionButton.on("pointerout", () => {
@@ -57,4 +57,5 @@ export default class Mainmenu extends Phaser.Scene {
 
     console.log("You're here");
   }
-}
+  }
+
