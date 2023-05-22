@@ -31,7 +31,7 @@ export default class ExtendedEntity extends Phaser.Physics.Matter.Sprite {
     this.health--;
     if(this.Dead){
       this.onDeath();
-      console.log(this.name, 'is dead')
+      // console.log(this.name, 'is dead')
     }
     //more features can be stored here
   }

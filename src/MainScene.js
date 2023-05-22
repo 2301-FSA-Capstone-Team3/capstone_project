@@ -9,7 +9,6 @@ export default class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
     this.enemies = []
-
   }
   preload() {
     Player.preload(this);
@@ -20,6 +19,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
+    console.log(this.enemies)
     this.add.text(20, 20, "Playing game", {font: "25px Arial", fill: "yellow" })
     const MainMap = this.make.tilemap({ key: "MainMap" });
     const tileset = MainMap.addTilesetImage("IceTileset", "tiles", 32, 32);
@@ -69,25 +69,8 @@ export default class MainScene extends Phaser.Scene {
   }
   showGameOver(){
     // this.scene.start('GameOver')
-    this.scene.launch('GameOver',{kills: this.enemies.length})
+    this.scene.start('GameOver',{kills: this.enemies.length})
   }
-  closeGameOver(){
-    this.scene.stop('GameOver')
-  }
-  handleTryAgain(){
-    console.log('restart level')
-    this.closeGameOver()
-    this.restartGame()
-  }
-  handleHome(){
-    console.log('Start Screen')
-    this.closeGameOver();
-    // this.goHome()
-  }
-  restartGame(){
-    this.scene.restart()
-  }
-
 }
 
 
